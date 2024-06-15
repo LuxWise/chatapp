@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const ChangeLastNameScreen = () => {
+export const ChangeNameScreen = () => {
   return (
     <View>
-      <Text>ChangeLastNameScreen</Text>
+      <Text>ChangeNameScreen</Text>
     </View>
   );
 };
 
-export default ChangeLastNameScreen;
+export default ChangeNameScreen;

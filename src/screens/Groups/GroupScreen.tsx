@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const LoginScreen = () => {
+export const GroupScreen = () => {
   return (
     <View>
-      <Text>LoginScreen</Text>
+      <Text>GroupScreen</Text>
     </View>
   );
 };
 
-export default LoginScreen;
+export default GroupScreen;

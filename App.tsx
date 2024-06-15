@@ -1,10 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { Text } from "react-native";
+import { HandlerNavigation } from "./src/navigations";
+import { StatusBar } from "react-native";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Text>app</Text>
+      <StatusBar barStyle={"light-content"} />
+      <HandlerNavigation />
     </NavigationContainer>
   );
 }

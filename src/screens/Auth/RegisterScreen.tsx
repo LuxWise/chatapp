@@ -1,12 +1,10 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const GroupScreen = () => {
+export const RegisterScreen = () => {
   return (
     <View>
-      <Text>GroupScreen</Text>
+      <Text style={{ color: "#fff" }}>RegisterScreen</Text>
     </View>
   );
 };
-
-export default GroupScreen;
