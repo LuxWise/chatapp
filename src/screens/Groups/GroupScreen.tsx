@@ -8,5 +8,3 @@ export const GroupScreen = () => {
     </View>
   );
 };
-
-export default GroupScreen;

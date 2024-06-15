@@ -1,12 +1,10 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-export const GroupProfile = () => {
+export const GroupProfileScreen = () => {
   return (
     <View>
       <Text>GroupProfile</Text>
     </View>
   );
 };
-
-export default GroupProfile;
