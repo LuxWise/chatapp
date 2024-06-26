@@ -1,7 +1,7 @@
 export const styles = {
   stackNavigationStyles: {
     cardStyle: {
-      backgroundColor: "#000",
+      backgroundColor: "#07010b",
     },
     headerStyle: {
       backgroundColor: "#000",

@@ -1,6 +1,6 @@
 import { screens } from "@/utils";
 import { createStackNavigator } from "@react-navigation/stack";
-import { styles } from "./Styles.styles";
+import { styles } from "../Styles.styles";
 import { ChatsScreen, CreateChatScreen } from "@/screens/Chats";
 
 const Stack = createStackNavigator();

@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { screens } from "@/utils";
 import { CreateGroupScreen, GroupScreen } from "@/screens/Groups";
-import { styles } from "./Styles.styles";
+import { styles } from "../Styles.styles";
 
 const Stack = createStackNavigator();
 

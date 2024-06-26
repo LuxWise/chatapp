@@ -5,7 +5,7 @@ import {
 } from "@/screens/Settings";
 import { screens } from "@/utils";
 import { createStackNavigator } from "@react-navigation/stack";
-import { styles } from "./Styles.styles";
+import { styles } from "../Styles.styles";
 
 const Stack = createStackNavigator();
 

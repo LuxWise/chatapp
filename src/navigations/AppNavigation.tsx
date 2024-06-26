@@ -2,7 +2,7 @@ import { screens } from "@/utils";
 import { createStackNavigator } from "@react-navigation/stack";
 import { BottomTabsNavigation } from "./BottomTabs";
 import { ChatScreen } from "@/screens/Chats";
-import { styles } from "./stacks/Styles.styles";
+import { styles } from "./Styles.styles";
 import {
   CameraScreen,
   ImageFullScreen,
@@ -28,12 +28,12 @@ export const AppNavigation = () => {
       <Stack.Screen
         name={screens.global.chatScreen}
         component={ChatScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, ...styles.stackNavigationStyles }}
       />
       <Stack.Screen
         name={screens.global.groupScreen}
         component={GroupScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, ...styles.stackNavigationStyles }}
       />
       <Stack.Group
         screenOptions={{ presentation: "modal", ...styles.modalStyle }}
@@ -41,22 +41,22 @@ export const AppNavigation = () => {
         <Stack.Screen
           name={screens.global.userProfileScreen}
           component={UserProfileScreen}
-          options={{ headerShown: false }}
+          options={{ title: "User info." }}
         />
         <Stack.Screen
           name={screens.global.groupProfileScreen}
           component={GroupProfileScreen}
-          options={{ headerShown: false }}
+          options={{ title: "Group info." }}
         />
         <Stack.Screen
           name={screens.global.addUserGroupScreen}
           component={AddUserGroupScreen}
-          options={{ headerShown: false }}
+          options={{ title: "Add participant" }}
         />
         <Stack.Screen
           name={screens.global.changeNameGroupScreen}
           component={ChangeNameGroupScreen}
-          options={{ headerShown: false }}
+          options={{ title: "Change name of group" }}
         />
         <Stack.Screen
           name={screens.global.cameraScreen}

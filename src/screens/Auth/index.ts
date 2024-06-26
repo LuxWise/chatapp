@@ -1,3 +1,3 @@
-export * from "./AuthStartScreen";
-export * from "./LoginScreen";
-export * from "./RegisterScreen";
+export * from "./AuthStartScreen/AuthStartScreen";
+export * from "./LoginScreen/LoginScreen";
+export * from "./RegisterScreen/RegisterScreen";

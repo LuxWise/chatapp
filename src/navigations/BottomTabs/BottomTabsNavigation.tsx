@@ -1,17 +1,12 @@
-import React from "react";
+import Ionic from "react-native-vector-icons/Ionicons";
+import Awesome from "react-native-vector-icons/FontAwesome";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ChatNavigation, GroupNavigation, SettingsNavigation } from "../stacks";
 import { screens } from "@/utils";
 import { styles } from "./BottomTabNavigation.styles";
-import Ionic from "react-native-vector-icons/Ionicons";
-import Awesome from "react-native-vector-icons/FontAwesome";
+import { route } from "@/types";
 
 const Tab = createBottomTabNavigator();
-
-interface route {
-  key: string;
-  name: string;
-}
 
 export const BottomTabsNavigation = () => {
   return (
