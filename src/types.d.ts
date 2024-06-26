@@ -1,5 +1,13 @@
-interface props {
-  children: JSX.Element | JSX.Element[];
+import { Request } from "express";
+
+export interface registerEntry {
+  email: string;
+  password: string;
+}
+
+export interface loginEntry {
+  email: string;
+  password: string;
 }
 
 interface route {
