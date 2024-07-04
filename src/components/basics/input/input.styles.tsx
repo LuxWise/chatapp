@@ -17,5 +17,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontFamily: "RobotoMedium",
     fontSize: width * 0.042,
+    color: "#fff",
+  },
+  errorContainer: {
+    backgroundColor: "#ff2",
   },
 });

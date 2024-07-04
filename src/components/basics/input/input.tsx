@@ -20,12 +20,11 @@ export const Input = ({
   error,
 }: inputProps) => {
   return (
-    <View style={[styles.inputContainer, error && { backgroundColor: "#ff2" }]}>
+    <View style={[styles.inputContainer, error && styles.errorContainer]}>
       <TextInput
         autoCorrect={false}
         style={styles.textInput}
         secureTextEntry={secure}
-        keyboardType="email-address"
         placeholder={placeholder}
         placeholderTextColor={"#0d013390"}
         selectionColor={"#0d0133"}

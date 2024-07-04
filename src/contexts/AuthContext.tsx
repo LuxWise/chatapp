@@ -1,19 +1,67 @@
+import { Auth } from "@/api/auth";
+import { User } from "@/api/user";
 import { AuthContextType, props } from "@/types";
-import { createContext } from "react";
+import { hasExpiredToken } from "@/utils/token";
+import { createContext, useEffect, useState } from "react";
 
 const defaultAuthContext: AuthContextType = {
+  accesToken: null,
   user: null,
+  login: async () => {},
 };
+
+const userController = new User();
+const authController = new Auth();
 
 export const AuthContext = createContext<AuthContextType>(defaultAuthContext);
 
 export const AuthProvider = (props: props) => {
   const { children } = props;
-  const user = null;
+  const [loading, setLoading] = useState(true);
+  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser] = useState<string | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      const accesToken = await authController.getAccessToken();
+      const refreshToken = await authController.getRefreshToken();
+
+      if (!accesToken || !refreshToken) {
+        logout();
+        setLoading(false);
+        return;
+      }
+
+      console.log(hasExpiredToken(accesToken));
+
+      setLoading(false);
+    })();
+  }, []);
+
+  const login = async (accestoken: string) => {
+    try {
+      setLoading(true);
+      const response = await userController.getMe(accestoken);
+      setUser(response);
+      setToken(accestoken);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
+  };
+
+  const logout = () => {
+    console.log("Logout");
+  };
 
   const data = {
+    accesToken: token,
     user,
+    login,
   };
+
+  if (loading) return null;
 
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };

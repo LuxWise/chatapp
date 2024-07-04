@@ -1,5 +1,8 @@
 import { Request } from "express";
 
+interface props {
+  children: JSX.Element | JSX.Element[];
+}
 export interface registerEntry {
   email: string;
   password: string;
@@ -16,7 +19,9 @@ interface route {
 }
 
 interface AuthContextType {
+  accesToken: string | null;
   user: string | null;
+  login: (accessToken: string) => Promise<void>;
 }
 
 export type AuthStackParamList = {

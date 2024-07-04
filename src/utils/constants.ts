@@ -8,6 +8,12 @@ export const ENV = {
   ENDPOINTS: {
     AUTH: {
       REGISTER: "register",
+      LOGIN: "login",
     },
+    ME: "user/me",
+  },
+  JWT: {
+    ACCESS: "access",
+    REFRESH: "refresh",
   },
 };

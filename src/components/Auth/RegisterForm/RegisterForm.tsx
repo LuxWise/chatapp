@@ -58,7 +58,7 @@ export const RegisterForm = () => {
               error={touched.username && errors.username ? true : false}
             />
             <Input
-              secure={false}
+              secure={true}
               placeholder="password"
               handleChange={handleChange("password")}
               handleBlur={handleBlur("password")}
