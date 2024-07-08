@@ -32,11 +32,23 @@ export const AuthProvider = (props: props) => {
         return;
       }
 
-      console.log(hasExpiredToken(accesToken));
+      if (hasExpiredToken(accesToken)) {
+        if (hasExpiredToken(refreshToken)) {
+          logout();
+        } else {
+          relogin(refreshToken);
+        }
+      } else {
+        await login(accesToken);
+      }
 
       setLoading(false);
     })();
   }, []);
+
+  const relogin = async (refreshToken: string) => {
+    console.log("RELOGIN", refreshToken);
+  };
 
   const login = async (accestoken: string) => {
     try {
@@ -52,7 +64,9 @@ export const AuthProvider = (props: props) => {
   };
 
   const logout = () => {
-    console.log("Logout");
+    setUser(null);
+    setToken(null);
+    authController.removeTokens();
   };
 
   const data = {
