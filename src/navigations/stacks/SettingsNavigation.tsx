@@ -19,7 +19,7 @@ export const SettingsNavigation = () => {
       <Stack.Screen
         name={screens.tab.settings.settingScreen}
         component={SettingsScreen}
-        options={{ headerShown: false }}
+        options={{ title: "Settings" }}
       />
       <Stack.Screen
         name={screens.tab.settings.changeFirstnameScreen}

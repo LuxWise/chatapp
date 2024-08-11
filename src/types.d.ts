@@ -18,10 +18,18 @@ interface route {
   name: string;
 }
 
+interface User {
+  username: string;
+  email: string;
+  avatar?: string;
+}
+
 interface AuthContextType {
   accesToken: string | null;
-  user: string | null;
+  user: User | null;
   login: (accessToken: string) => Promise<void>;
+  logout: () => void;
+  updateUser: (key: string, value: any) => void;
 }
 
 export type AuthStackParamList = {

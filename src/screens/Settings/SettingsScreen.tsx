@@ -1,12 +1,11 @@
-import { View, Text } from "react-native";
+import { Settings } from "@/components/Auth/Settings/Settings";
 import React from "react";
-import { Button } from "@/components/basics";
+import { SafeAreaView } from "react-native";
 
 export const SettingsScreen = () => {
   return (
-    <View>
-      <Text>SettingsScreen</Text>
-      <Button color="#fff" text="logout" />
-    </View>
+    <SafeAreaView>
+      <Settings />
+    </SafeAreaView>
   );
 };

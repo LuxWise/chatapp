@@ -14,6 +14,9 @@ import {
   GroupProfileScreen,
   GroupScreen,
 } from "@/screens/Groups";
+import { initSocket } from "@/utils/sockets";
+
+initSocket();
 
 const Stack = createStackNavigator();
 

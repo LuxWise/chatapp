@@ -1,10 +1,23 @@
-import { Platform } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
-export const styles = {
+export const styles = StyleSheet.create({
   tabBarStyle: {
-    backgroundColor: "#171717",
+    backgroundColor: Platform.OS === "android" ? "#04050a" : "#111111",
     borderTopWidth: 0,
-    paddingBottom: Platform.OS === "android" ? 20 : 25,
-    height: Platform.OS === "android" ? 70 : 80,
+    shadowColor: "#0df7fd",
+    shadowOffset: {
+      width: 0,
+      height: Platform.OS === "android" ? 0 : 2,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 5,
+    paddingBottom: Platform.OS === "android" ? 10 : 10,
+    height: Platform.OS === "android" ? 65 : 70,
+    position: "absolute",
+    bottom: Platform.OS === "android" ? 12 : 30,
+    left: 16,
+    right: 16,
+    borderRadius: 25,
   },
-};
+});

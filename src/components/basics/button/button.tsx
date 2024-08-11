@@ -10,7 +10,7 @@ interface buttonProps {
   loading?: any;
 }
 
-export const Button = ({ text, onPress, color, loading }: buttonProps) => {
+const Button = ({ text, onPress, color, loading }: buttonProps) => {
   return (
     <TouchableOpacity
       style={[styles.button, { backgroundColor: color }]}
@@ -24,3 +24,20 @@ export const Button = ({ text, onPress, color, loading }: buttonProps) => {
     </TouchableOpacity>
   );
 };
+
+const ButtonSettings = ({ text, onPress, color, loading }: buttonProps) => {
+  return (
+    <TouchableOpacity
+      style={[styles.buttonView, { backgroundColor: color }]}
+      onPress={onPress}
+    >
+      {loading ? (
+        <Flow size={45} color="#FFF" />
+      ) : (
+        <Text style={styles.buttonTextSettings}>{text}</Text>
+      )}
+    </TouchableOpacity>
+  );
+};
+
+export const button = { Button, ButtonSettings };

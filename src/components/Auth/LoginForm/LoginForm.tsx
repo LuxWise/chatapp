@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { styles } from "./LoginForm.styles";
-import { Button, Input } from "@/components/basics";
+import { button, Input } from "@/components/basics";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { LoginStackParamList } from "@/types";
 import { Formik } from "formik";
@@ -58,6 +58,7 @@ export const LoginForm = () => {
               handleBlur={handleBlur("email")}
               value={values.email}
               error={touched.email && errors.email ? true : false}
+              keyboardType="email-address"
             />
             <Input
               secure={true}
@@ -66,16 +67,21 @@ export const LoginForm = () => {
               handleBlur={handleBlur("password")}
               value={values.password}
               error={touched.password && errors.password ? true : false}
+              keyboardType="default"
             />
           </View>
           <View style={styles.buttonView}>
-            <Button
+            <button.Button
               text="log in"
               color="#0df7fd"
               loading={isSubmitting}
               onPress={handleSubmit}
             />
-            <Button text="Register" color="#1498f2" onPress={goToRegister} />
+            <button.Button
+              text="Register"
+              color="#1498f2"
+              onPress={goToRegister}
+            />
           </View>
         </View>
       )}

@@ -1,4 +1,4 @@
-import { View, TextInput } from "react-native";
+import { View, TextInput, KeyboardTypeOptions } from "react-native";
 import { styles } from "./input.styles";
 import React from "react";
 
@@ -8,6 +8,7 @@ interface inputProps {
   handleChange?: (text: string) => void;
   handleBlur?: (e: any) => void;
   value?: string;
+  keyboardType?: KeyboardTypeOptions;
   error?: boolean;
 }
 
@@ -17,8 +18,12 @@ export const Input = ({
   handleChange,
   handleBlur,
   value,
+  keyboardType,
   error,
 }: inputProps) => {
+  if (keyboardType === undefined) {
+    keyboardType = "default";
+  }
   return (
     <View style={[styles.inputContainer, error && styles.errorContainer]}>
       <TextInput
@@ -31,6 +36,7 @@ export const Input = ({
         onChangeText={handleChange}
         onBlur={handleBlur}
         value={value}
+        keyboardType={keyboardType}
       />
     </View>
   );

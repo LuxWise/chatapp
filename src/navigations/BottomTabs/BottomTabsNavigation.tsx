@@ -15,7 +15,7 @@ export const BottomTabsNavigation = () => {
         headerShown: false,
         tabBarStyle: styles.tabBarStyle,
         tabBarInactiveTintColor: "#646464",
-        tabBarActiveTintColor: "#0891b2",
+        tabBarActiveTintColor: "#3edfe3",
         tabBarIcon: ({ color, size }) => IconBar(route, color, size),
       })}
     >

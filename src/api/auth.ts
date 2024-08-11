@@ -37,7 +37,19 @@ export class Auth {
     }
   }
 
-  // async refreshAccessToken(refreshToken: string) {}
+  async refreshAccessToken(refreshToken: string) {
+    try {
+      const url = `${ENV.API_URL}/${ENV.ENDPOINTS.AUTH.REFRESH_ACCESS_TOKEN}`;
+      const params = {
+        refreshToken,
+      };
+      const response = await axios.post(url, params);
+      if (response.status !== 200) throw response.data;
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   async setAccessToken(token: string) {
     await AsyncStorage.setItem(ENV.JWT.ACCESS, token);

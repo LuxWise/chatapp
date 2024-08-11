@@ -8,6 +8,8 @@ const defaultAuthContext: AuthContextType = {
   accesToken: null,
   user: null,
   login: async () => {},
+  logout: () => {},
+  updateUser: () => {},
 };
 
 const userController = new User();
@@ -19,7 +21,7 @@ export const AuthProvider = (props: props) => {
   const { children } = props;
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<string | null>(null);
+  const [user, setUser] = useState<any | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -47,7 +49,15 @@ export const AuthProvider = (props: props) => {
   }, []);
 
   const relogin = async (refreshToken: string) => {
-    console.log("RELOGIN", refreshToken);
+    try {
+      const { accesToken } = await authController.refreshAccessToken(
+        refreshToken
+      );
+      await authController.setAccessToken(accesToken);
+      await login(accesToken);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const login = async (accestoken: string) => {
@@ -69,10 +79,16 @@ export const AuthProvider = (props: props) => {
     authController.removeTokens();
   };
 
+  const updateUser = (key: string, value: any) => {
+    setUser({ ...user, [key]: value });
+  };
+
   const data = {
     accesToken: token,
     user,
     login,
+    logout,
+    updateUser,
   };
 
   if (loading) return null;
