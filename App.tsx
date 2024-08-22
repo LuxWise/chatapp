@@ -20,7 +20,7 @@ export default function App() {
           RobotoLight: require("./src/assets/fonts/Roboto-Light.ttf"),
           RobotoBold: require("./src/assets/fonts/Roboto-Bold.ttf"),
         });
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulación de carga
+        await new Promise(resolve => setTimeout(resolve, 2000));
       } catch (e) {
         console.warn(e);
       } finally {

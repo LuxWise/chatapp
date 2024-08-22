@@ -9,7 +9,7 @@ export const ChatNavigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        ...styles.stackNavigationStyles,
+        ...styles.stackCardNavigationStyles,
       }}
     >
       <Stack.Screen

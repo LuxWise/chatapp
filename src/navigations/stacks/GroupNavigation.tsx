@@ -9,7 +9,7 @@ export const GroupNavigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        ...styles.stackNavigationStyles,
+        ...styles.stackCardNavigationStyles,
       }}
     >
       <Stack.Screen

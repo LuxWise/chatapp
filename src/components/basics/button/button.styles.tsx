@@ -5,7 +5,7 @@ const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   button: {
     width: width * 0.3,
-    height: height * 0.05,
+    height: height * 0.055,
     borderRadius: 15,
     alignItems: "center",
     justifyContent: "center",
@@ -16,18 +16,25 @@ export const styles = StyleSheet.create({
     fontSize: RFPercentage(2),
   },
   buttonView: {
-    width: width * 0.9,
-    height: height * 0.06,
+    width: width * 0.43,
+    height: height * 0.1,
     borderRadius: 10,
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    columnGap: 10,
+    paddingLeft: width * 0.06,
     zIndex: 1,
-    borderWidth: 1,
-    borderColor: "#0df7fd",
   },
   buttonTextSettings: {
     color: "#fff",
     fontFamily: "RobotoMedium",
-    fontSize: RFPercentage(2),
+    fontSize: RFPercentage(1.4),
+  },
+  buttonTheme: {
+    width: width * 0.9,
+    height: height * 0.1,
+    borderRadius: 10,
+    justifyContent: "center",
+    zIndex: 1,
   },
 });

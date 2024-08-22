@@ -11,6 +11,18 @@ export const styles = {
       color: "#fff",
     },
   },
+  stackCardNavigationStyles: {
+    cardStyle: {
+      backgroundColor: "#090f12",
+    },
+    headerStyle: {
+      backgroundColor: "#090f12",
+      shadowColor: "transparent",
+    },
+    headerTitleStyle: {
+      color: "#fff",
+    },
+  },
   modalStyle: {
     cardStyle: {
       backgroundColor: "#000", // Color de fondo de la tarjeta

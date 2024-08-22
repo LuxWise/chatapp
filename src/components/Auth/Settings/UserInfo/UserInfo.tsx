@@ -5,7 +5,6 @@ import { ENV } from "@/utils/constants";
 
 export const UserInfo = () => {
   const { user } = useAuth();
-  console.log(user);
   return (
     <View style={styles.content}>
       <View style={styles.avatarContainer}>
@@ -17,10 +16,10 @@ export const UserInfo = () => {
         ) : (
           <View style={styles.avatar} />
         )}
-      </View>
-      <View>
-        <Text style={styles.username}>{user?.username}</Text>
-        <Text style={{ color: "#fff" }}>{user?.email}</Text>
+        <View style={styles.dataOverlay}>
+          <Text style={styles.username}>{user?.username}</Text>
+          <Text style={styles.email}>{user?.email}</Text>
+        </View>
       </View>
     </View>
   );

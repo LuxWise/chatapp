@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { styles } from "./RegisterForm.styles";
-import { Button, Input } from "@/components/basics";
+import { button, Input } from "@/components/basics";
 import { initialValue, validationSchema } from "./RegisterForm.form";
 import { Formik } from "formik";
 import { Auth } from "@/api/auth";
@@ -67,7 +67,7 @@ export const RegisterForm = () => {
             />
           </View>
           <View style={styles.buttonView}>
-            <Button
+            <button.Button
               color="#1498f2"
               text="create"
               loading={isSubmitting}

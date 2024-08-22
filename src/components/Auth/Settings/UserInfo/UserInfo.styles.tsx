@@ -1,35 +1,39 @@
-import { Platform, StyleSheet } from "react-native";
+import { Dimensions, Platform, StyleSheet } from "react-native";
+const { width, height } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
   content: {
     alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    columnGap: Platform.OS === "android" ? 20 : 30,
-    marginVertical: 50,
-    borderWidth: 2,
-    borderColor: "#0acfd4",
-    borderRadius: 20,
-    marginHorizontal: 20,
-    backgroundColor: "#14021f",
+    marginTop: 15,
   },
   avatarContainer: {
-    width: 100,
-    height: 100,
-    marginVertical: 20,
-    borderWidth: 2,
-    borderColor: "#0acfd4",
-    borderRadius: 50,
+    width: width * 0.9,
+    height: Platform.OS == "android" ? height * 0.44 : height * 0.38,
   },
   avatar: {
     width: "100%",
     height: "100%",
     resizeMode: "cover",
-    borderRadius: 50,
+    borderRadius: 10,
+    position: "relative",
   },
+  dataOverlay: {
+    position: "absolute",
+    top: "80%",
+    left: "5%",
+  },
+
   username: {
     fontFamily: "RobotoMedium",
-    fontSize: 25,
+    fontSize: 22,
     color: "#fff",
+    padding: 5,
+  },
+
+  email: {
+    fontFamily: "RobotoLight",
+    fontSize: 12,
+    color: "#fff",
+    padding: 5,
   },
 });

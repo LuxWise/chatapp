@@ -1,18 +1,15 @@
-import { button } from "@/components/basics";
 import { useAuth } from "@/hooks";
 import { View } from "react-native";
 import { UserInfo } from "./UserInfo";
-import { styles } from "./Settings.styles";
+import { Options } from "./Options";
 
 export const Settings = () => {
   const { logout } = useAuth();
 
   return (
-    <View>
+    <View style={{ gap: 12 }}>
       <UserInfo />
-      <View style={styles.contentButtons}>
-        <button.ButtonSettings color="#14021f" text="Logout" onPress={logout} />
-      </View>
+      <Options logout={logout} />
     </View>
   );
 };

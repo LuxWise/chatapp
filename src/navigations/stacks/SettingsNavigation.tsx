@@ -13,7 +13,7 @@ export const SettingsNavigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        ...styles.stackNavigationStyles,
+        ...styles.stackCardNavigationStyles,
       }}
     >
       <Stack.Screen

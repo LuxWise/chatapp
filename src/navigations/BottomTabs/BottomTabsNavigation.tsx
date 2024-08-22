@@ -12,10 +12,11 @@ export const BottomTabsNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        tabBarShowLabel: false,
         headerShown: false,
         tabBarStyle: styles.tabBarStyle,
-        tabBarInactiveTintColor: "#646464",
-        tabBarActiveTintColor: "#3edfe3",
+        tabBarInactiveTintColor: "#0f1c25",
+        tabBarActiveTintColor: "#fff",
         tabBarIcon: ({ color, size }) => IconBar(route, color, size),
       })}
     >
