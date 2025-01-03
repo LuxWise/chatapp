@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-export const ChangeFirstNameScreen = () => {
+export const NotificationScreen = () => {
   return (
     <View>
-      <Text>ChangeFirstNameScreen</Text>
+      <Text>ChangeLastNameScreen</Text>
     </View>
   );
 };

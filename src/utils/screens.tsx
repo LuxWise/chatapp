@@ -30,8 +30,8 @@ const groups = {
 const settings = {
   root: "SettingsRoot",
   settingScreen: "SettingsScreen",
-  changeFirstnameScreen: "ChangeFirstnameScreen",
-  changeLastnameScreen: "ChangeLastnameScreen",
+  ChangeUserName: "ChangeUserName",
+  notifications: "Notifications",
 };
 
 export const screens = {

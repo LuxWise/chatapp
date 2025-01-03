@@ -1,3 +1,3 @@
 export * from "./ChatScreen";
-export * from "./ChatsScreen";
-export * from "./CreateChatScreen";
+export * from "./ChatsScreen/ChatsScreen";
+export * from "./CreateChatScreen/CreateChatScreen";

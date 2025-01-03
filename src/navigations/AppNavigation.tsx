@@ -1,12 +1,10 @@
-import { screens } from "@/utils";
-import { createStackNavigator } from "@react-navigation/stack";
+// AppNavigation.tsx
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { BottomTabsNavigation } from "./BottomTabs";
-import { ChatScreen } from "@/screens/Chats";
-import { styles } from "./Styles.styles";
 import {
+  UserProfileScreen,
   CameraScreen,
   ImageFullScreen,
-  UserProfileScreen,
 } from "@/screens/Global";
 import {
   AddUserGroupScreen,
@@ -14,11 +12,11 @@ import {
   GroupProfileScreen,
   GroupScreen,
 } from "@/screens/Groups";
-import { initSocket } from "@/utils/sockets";
+import { screens } from "@/utils";
+import { styles } from "./Styles.styles";
+import { ChatScreen } from "@/screens/Chats";
 
-initSocket();
-
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export const AppNavigation = () => {
   return (
@@ -39,7 +37,10 @@ export const AppNavigation = () => {
         options={{ headerShown: false, ...styles.stackNavigationStyles }}
       />
       <Stack.Group
-        screenOptions={{ presentation: "modal", ...styles.modalStyle }}
+        screenOptions={{
+          presentation: "containedTransparentModal",
+          ...styles.modalStyle,
+        }}
       >
         <Stack.Screen
           name={screens.global.userProfileScreen}

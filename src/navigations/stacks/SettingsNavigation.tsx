@@ -1,13 +1,13 @@
 import {
-  ChangeFirstNameScreen,
-  ChangeLastNameScreen,
+  ChangeUserNameScreen,
   SettingsScreen,
+  NotificationScreen,
 } from "@/screens/Settings";
 import { screens } from "@/utils";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { styles } from "../Styles.styles";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export const SettingsNavigation = () => {
   return (
@@ -22,14 +22,14 @@ export const SettingsNavigation = () => {
         options={{ title: "Settings" }}
       />
       <Stack.Screen
-        name={screens.tab.settings.changeFirstnameScreen}
-        component={ChangeFirstNameScreen}
-        options={{ title: "change Name", presentation: "modal" }}
+        name={screens.tab.settings.ChangeUserName}
+        component={ChangeUserNameScreen}
+        options={{ title: "User Name" }}
       />
       <Stack.Screen
-        name={screens.tab.settings.changeLastnameScreen}
-        component={ChangeLastNameScreen}
-        options={{ title: "change LastName", presentation: "modal" }}
+        name={screens.tab.settings.notifications}
+        component={NotificationScreen}
+        options={{ title: "Notications", presentation: "modal" }}
       />
     </Stack.Navigator>
   );

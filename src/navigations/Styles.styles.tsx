@@ -1,6 +1,6 @@
 export const styles = {
   stackNavigationStyles: {
-    cardStyle: {
+    contentStyle: {
       backgroundColor: "#07010b",
     },
     headerStyle: {
@@ -12,7 +12,7 @@ export const styles = {
     },
   },
   stackCardNavigationStyles: {
-    cardStyle: {
+    contentStyle: {
       backgroundColor: "#090f12",
     },
     headerStyle: {
@@ -24,8 +24,8 @@ export const styles = {
     },
   },
   modalStyle: {
-    cardStyle: {
-      backgroundColor: "#000", // Color de fondo de la tarjeta
+    contentStyle: {
+      backgroundColor: "#090f12",
     },
     headerStyle: {
       backgroundColor: "#171717",

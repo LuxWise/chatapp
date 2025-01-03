@@ -1,9 +1,9 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { screens } from "@/utils";
 import { CreateGroupScreen, GroupScreen } from "@/screens/Groups";
 import { styles } from "../Styles.styles";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export const GroupNavigation = () => {
   return (

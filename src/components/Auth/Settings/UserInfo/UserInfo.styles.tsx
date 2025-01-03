@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
   avatarContainer: {
     width: width * 0.9,
-    height: Platform.OS == "android" ? height * 0.44 : height * 0.38,
+    height: Platform.OS == "android" ? height * 0.4 : height * 0.38,
   },
   avatar: {
     width: "100%",
@@ -18,6 +18,9 @@ export const styles = StyleSheet.create({
     position: "relative",
   },
   dataOverlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    paddingHorizontal: 10,
+    borderRadius: 10,
     position: "absolute",
     top: "80%",
     left: "5%",
@@ -31,7 +34,7 @@ export const styles = StyleSheet.create({
   },
 
   email: {
-    fontFamily: "RobotoLight",
+    fontFamily: "RobotoMedium",
     fontSize: 12,
     color: "#fff",
     padding: 5,

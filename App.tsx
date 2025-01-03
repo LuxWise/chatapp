@@ -5,6 +5,7 @@ import { HandlerNavigation } from "./src/navigations";
 import { StatusBar } from "react-native";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { useEffect, useState } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -37,11 +38,13 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <StatusBar barStyle={"light-content"} />
-      <AuthProvider>
-        <HandlerNavigation />
-      </AuthProvider>
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <StatusBar barStyle={"light-content"} />
+        <AuthProvider>
+          <HandlerNavigation />
+        </AuthProvider>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }

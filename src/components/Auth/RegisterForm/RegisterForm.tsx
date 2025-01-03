@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { styles } from "./RegisterForm.styles";
-import { button, Input } from "@/components/basics";
+import { button, input } from "@/components/basics";
 import { initialValue, validationSchema } from "./RegisterForm.form";
 import { Formik } from "formik";
 import { Auth } from "@/api/auth";
@@ -40,7 +40,7 @@ export const RegisterForm = () => {
       }) => (
         <View style={styles.content}>
           <View style={styles.container}>
-            <Input
+            <input.Input
               secure={false}
               placeholder="email"
               handleChange={handleChange("email")}
@@ -49,7 +49,7 @@ export const RegisterForm = () => {
               error={touched.email && errors.email ? true : false}
             />
 
-            <Input
+            <input.Input
               secure={false}
               placeholder="username"
               handleChange={handleChange("username")}
@@ -57,7 +57,7 @@ export const RegisterForm = () => {
               value={values.username}
               error={touched.username && errors.username ? true : false}
             />
-            <Input
+            <input.Input
               secure={true}
               placeholder="password"
               handleChange={handleChange("password")}

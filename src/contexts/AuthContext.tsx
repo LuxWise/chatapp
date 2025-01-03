@@ -80,7 +80,10 @@ export const AuthProvider = (props: props) => {
   };
 
   const updateUser = (key: string, value: any) => {
-    setUser({ ...user, [key]: value });
+    setUser((preUser: typeof user) => ({
+      ...preUser,
+      [key]: value,
+    }));
   };
 
   const data = {

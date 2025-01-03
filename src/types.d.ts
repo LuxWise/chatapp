@@ -41,7 +41,17 @@ export type LoginStackParamList = {
   RegisterScreen: undefined;
 };
 
+export type RegisterStackParamList = {
+  ChangeUserName: undefined;
+  Notifications: undefined;
+};
+
+export type ChatStackParamList = {
+  CreateChatScreen: undefined;
+};
+
 export type RootStackParamList = {
   Auth: AuthStackParamList;
   Login: LoginStackParamList;
+  Chat: ChatStackParamList;
 };

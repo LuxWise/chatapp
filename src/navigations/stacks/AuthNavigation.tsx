@@ -1,25 +1,22 @@
 import { screens } from "../../utils";
 import { styles } from "../Styles.styles";
-import {
-  createStackNavigator,
-  TransitionPresets,
-} from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   AuthStartScreen,
   LoginScreen,
   RegisterScreen,
 } from "../../screens/Auth";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export const AuthNavigation = () => {
   return (
     <Stack.Navigator
       screenOptions={{
         ...styles.stackNavigationStyles,
-        gestureEnabled: true,
-        cardOverlayEnabled: true,
-        ...TransitionPresets.SlideFromRightIOS,
+        animation: "slide_from_right", // Configuración de la animación deslizante
+        gestureEnabled: true, // Permite gestos para regresar
+        headerShown: false,
       }}
     >
       <Stack.Screen

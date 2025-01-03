@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import { styles } from "./LoginForm.styles";
-import { button, Input } from "@/components/basics";
+import { button, input } from "@/components/basics";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { LoginStackParamList } from "@/types";
 import { Formik } from "formik";
@@ -51,7 +51,7 @@ export const LoginForm = () => {
       }) => (
         <View style={styles.content}>
           <View style={styles.container}>
-            <Input
+            <input.Input
               secure={false}
               placeholder="username"
               handleChange={handleChange("email")}
@@ -60,7 +60,7 @@ export const LoginForm = () => {
               error={touched.email && errors.email ? true : false}
               keyboardType="email-address"
             />
-            <Input
+            <input.Input
               secure={true}
               placeholder="password"
               handleChange={handleChange("password")}
